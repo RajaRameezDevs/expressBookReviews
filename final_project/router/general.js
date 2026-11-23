@@ -65,6 +65,7 @@ public_users.get('/author/:author', async function (req, res) {
       if (allBooks[key].author.toLowerCase() === author.toLowerCase()) {
         matchingBooks.push({
           isbn: key,
+          author: allBooks[key].author,
           title: allBooks[key].title,
           reviews: allBooks[key].reviews
         });
@@ -94,6 +95,7 @@ public_users.get('/title/:title', function (req, res) {
           matchingBooks.push({
             isbn: key,
             author: allBooks[key].author,
+            title: allBooks[key].title,
             reviews: allBooks[key].reviews
           });
         }
